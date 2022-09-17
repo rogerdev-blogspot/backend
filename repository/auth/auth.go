@@ -1,10 +1,10 @@
 package auth
 
 import (
+	"backend/entities"
+	"backend/middlewares"
 	"database/sql"
 	"fmt"
-	"templateLoginRegister/entities"
-	"templateLoginRegister/middlewares"
 
 	"errors"
 )

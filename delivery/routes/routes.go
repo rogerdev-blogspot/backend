@@ -1,10 +1,10 @@
 package routes
 
 import (
-	"templateLoginRegister/delivery/controllers/auth"
+	"backend/delivery/controllers/auth"
 
-	"templateLoginRegister/delivery/controllers/user"
-	"templateLoginRegister/middlewares"
+	"backend/delivery/controllers/user"
+	"backend/middlewares"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

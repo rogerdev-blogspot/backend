@@ -1,10 +1,10 @@
-APP_PORT=8080
+APP_PORT=8081
 
 MODE=development
 
 DB_DRIVER=mysql
-DB_NAME=loginregister
-DB_HOST=localhost
+DB_NAME=blogspot
+DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_USERNAME=root
 DB_PASSWORD=adol1122

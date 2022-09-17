@@ -1,14 +1,14 @@
 package main
 
 import (
+	"backend/configs"
+	ac "backend/delivery/controllers/auth"
+	uc "backend/delivery/controllers/user"
+	"backend/delivery/routes"
+	authRepo "backend/repository/auth"
+	userRepo "backend/repository/user"
+	"backend/utils"
 	"fmt"
-	"templateLoginRegister/configs"
-	ac "templateLoginRegister/delivery/controllers/auth"
-	uc "templateLoginRegister/delivery/controllers/user"
-	"templateLoginRegister/delivery/routes"
-	authRepo "templateLoginRegister/repository/auth"
-	userRepo "templateLoginRegister/repository/user"
-	"templateLoginRegister/utils"
 
 	"github.com/go-playground/validator"
 	"github.com/labstack/echo/v4"

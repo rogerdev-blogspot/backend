@@ -1,9 +1,9 @@
 package utils
 
 import (
+	"backend/configs"
 	"database/sql"
 	"fmt"
-	"templateLoginRegister/configs"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -17,6 +17,8 @@ func InitDB(config *configs.AppConfig) (*sql.DB, error) {
 		config.Database.Port,
 		config.Database.Name,
 	)
+	fmt.Println(connectionString)
+
 	db, err := sql.Open("mysql", connectionString)
 	if err != nil {
 		return nil, err
@@ -31,6 +33,7 @@ func InitMigrate(db *sql.DB) {
 	// db.AutoMigrate(&entities.User{})
 	rows, err := db.Query("CREATE TABLE IF NOT EXISTS `user` (`uid` varchar(32) NOT NULL,`name` varchar(50) NOT NULL,`email` varchar(50) NOT NULL,`password` varchar(100) NOT NULL,`address` varchar(50),`gender` varchar(10) NOT NULL,created_at INT,updated_at INT,deleted_at INT,UNIQUE KEY unique_uid (uid),UNIQUE KEY unique_email (email)) ENGINE=InnoDB DEFAULT CHARSET=latin1;")
 	if err != nil {
+		fmt.Println(err.Error())
 		return
 	}
 	fmt.Println("sukses")

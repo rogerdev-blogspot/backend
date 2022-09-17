@@ -1,16 +1,16 @@
 package auth
 
 import (
+	"backend/delivery/controllers/common"
+	"backend/entities"
+	"backend/middlewares"
+	"backend/repository/auth"
+	"backend/utils"
 	"context"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"templateLoginRegister/delivery/controllers/common"
-	"templateLoginRegister/entities"
-	"templateLoginRegister/middlewares"
-	"templateLoginRegister/repository/auth"
-	"templateLoginRegister/utils"
 
 	"github.com/labstack/gommon/log"
 

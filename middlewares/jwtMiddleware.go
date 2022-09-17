@@ -1,9 +1,9 @@
 package middlewares
 
 import (
+	config "backend/configs"
+	"backend/entities"
 	"errors"
-	config "templateLoginRegister/configs"
-	"templateLoginRegister/entities"
 
 	"time"
 

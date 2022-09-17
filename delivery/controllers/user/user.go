@@ -1,12 +1,12 @@
 package user
 
 import (
+	"backend/delivery/controllers/common"
+	"backend/entities"
+	"backend/middlewares"
+	"backend/repository/user"
 	"net/http"
 	"strconv"
-	"templateLoginRegister/delivery/controllers/common"
-	"templateLoginRegister/entities"
-	"templateLoginRegister/middlewares"
-	"templateLoginRegister/repository/user"
 	"time"
 
 	// utils "todo-list-app/utils/aws_S3"

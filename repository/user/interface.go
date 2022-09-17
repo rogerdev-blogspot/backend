@@ -1,6 +1,6 @@
 package user
 
-import "templateLoginRegister/entities"
+import "backend/entities"
 
 type User interface {
 	Register(user entities.User) (entities.User, error)

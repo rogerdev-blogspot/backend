@@ -1,12 +1,12 @@
 package user
 
 import (
+	"backend/entities"
+	"backend/middlewares"
 	"database/sql"
 	"errors"
 	"fmt"
 	"strings"
-	"templateLoginRegister/entities"
-	"templateLoginRegister/middlewares"
 	"time"
 
 	"github.com/lithammer/shortuuid"
