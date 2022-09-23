@@ -29,6 +29,7 @@ func main() {
 
 	db, err := utils.InitDB(config)
 	if err != nil {
+		fmt.Println(err.Error())
 		panic("error database")
 	}
 	defer db.Close()

@@ -17,10 +17,10 @@ func InitDB(config *configs.AppConfig) (*sql.DB, error) {
 		config.Database.Port,
 		config.Database.Name,
 	)
-	fmt.Println(connectionString)
-
 	db, err := sql.Open("mysql", connectionString)
 	if err != nil {
+
+		fmt.Println(err.Error(), connectionString)
 		return nil, err
 	}
 

@@ -5,7 +5,6 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/joho/godotenv"
 	"github.com/labstack/gommon/log"
 )
 
@@ -15,7 +14,7 @@ type AppConfig struct {
 		Driver   string
 		Name     string
 		Address  string
-		Port     int
+		Port     string
 		Username string
 		Password string
 	}
@@ -38,34 +37,25 @@ func GetConfig() *AppConfig {
 }
 
 func initConfig() *AppConfig {
-	err := godotenv.Load("local.env")
 
-	if err != nil {
-		log.Info(err)
-	}
-	portDB, errParse := strconv.Atoi(os.Getenv("DB_PORT"))
-	if errParse != nil {
-		log.Warn(errParse)
-	}
+	portDB := os.Getenv("DB_PORT")
 
 	var defaultConfig AppConfig
 	port, errPort := strconv.Atoi(os.Getenv("APP_PORT"))
 	if errPort != nil {
-		log.Warn(errParse)
+		log.Warn(errPort.Error())
 	}
 
 	defaultConfig.Port = port
 	defaultConfig.Database.Driver = os.Getenv("DB_DRIVER")
 	defaultConfig.Database.Name = os.Getenv("DB_NAME")
-	defaultConfig.Database.Address = os.Getenv("DB_HOST")
+	defaultConfig.Database.Address = os.Getenv("DB_ADDRESS")
 	defaultConfig.Database.Port = portDB
 	defaultConfig.Database.Username = os.Getenv("DB_USERNAME")
 	defaultConfig.Database.Password = os.Getenv("DB_PASSWORD")
 
 	defaultConfig.GoogleClientID = os.Getenv("GOOGLE_CLIENT_ID")
 	defaultConfig.GoogleClientSecret = os.Getenv("GOOGLE_CLIENT_SECRET")
-
-	log.Info(defaultConfig)
 
 	return &defaultConfig
 }
