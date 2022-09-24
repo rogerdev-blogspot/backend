@@ -5,7 +5,7 @@ kind: Deployment
 
 metadata:
 
-      name: go-app-deployment
+      name: rogerdev-blogspot-backend-deployment
 
 spec:
 
@@ -15,7 +15,7 @@ spec:
 
     matchLabels:
 
-      app: go-app
+      app: rogerdev-blogspot-backend
 
   strategy:
 
@@ -27,13 +27,13 @@ spec:
 
       labels:
 
-        app: go-app
+        app: rogerdev-blogspot-backend
 
     spec:
 
       containers:
 
-      - name: go-app
+      - name: rogerdev-blogspot-backend
 
         image: mawan1122/rogerdev-blogspot-backend:latest
 
@@ -54,13 +54,13 @@ kind: Service
 
 metadata:
 
-  name: go-app-service
+  name: rogerdev-blogspot-backend-service
 
 spec:
 
   selector:
 
-    app: go-app
+    app: rogerdev-blogspot-backend
 
   ports:
 
@@ -76,7 +76,7 @@ kind: Ingress
 
 metadata:
 
-  name: example-ingress
+  name: rogerdev-blogspot-backend-ingress
 
   annotations:
 
@@ -99,7 +99,7 @@ spec:
 
               service:
 
-                name: go-app-service
+                name: rogerdev-blogspot-backend-service
                 port:
 
                   number: 8080
