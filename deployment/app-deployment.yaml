@@ -68,39 +68,39 @@ spec:
 
       targetPort: 8081
  
----
+# ---
 
-apiVersion: networking.k8s.io/v1
+# apiVersion: networking.k8s.io/v1
 
-kind: Ingress
+# kind: Ingress
 
-metadata:
+# metadata:
 
-  name: rogerdev-blogspot-backend-ingress
+#   name: rogerdev-blogspot-backend-ingress
 
-  annotations:
+#   annotations:
 
-      nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
+#       nginx.ingress.kubernetes.io/rewrite-target: /
+# spec:
 
-  rules:
+#   rules:
 
-    - host: rogerdev.mawan.info
+#     - host: rogerdev.mawan.info
 
-      http:
+#       http:
 
-        paths:
+#         paths:
 
-          - path: /
+#           - path: /
 
-            pathType: Prefix
+#             pathType: Prefix
 
-            backend:
+#             backend:
 
-              service:
+#               service:
 
-                name: rogerdev-blogspot-backend-service
-                port:
+#                 name: rogerdev-blogspot-backend-service
+#                 port:
 
-                  number: 8080
+#                   number: 8080
           

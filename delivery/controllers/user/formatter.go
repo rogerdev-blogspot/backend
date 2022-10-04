@@ -34,7 +34,7 @@ type UserGetByIdResponse struct {
 
 // =================== Create User Request =======================
 type CreateUserRequestFormat struct {
-	Name     string `json:"name" form:"name" validate:"required,min=3,max=25,excludesall=!@#?^#*()_+-=0123456789%&"`
+	Name     string `json:"name" form:"name" validate:"required,min=3,max=25"`
 	Email    string `json:"email" form:"email" validate:"required,email"`
 	Password string `json:"password" form:"password" validate:"required,min=3,max=20"`
 	Address  string `json:"address" form:"address" validate:"required"`
@@ -44,7 +44,7 @@ type CreateUserRequestFormat struct {
 
 // =================== Update User Request =======================
 type UpdateUserRequestFormat struct {
-	Name     string `json:"name" form:"name" validate:"omitempty,min=3,max=25,excludesall=!@#?^#*()_+-=0123456789%&"`
+	Name     string `json:"name" form:"name" validate:"omitempty,min=3,max=25"`
 	Email    string `json:"email" form:"email" validate:"omitempty,email"`
 	Password string `json:"password" form:"password" validate:"omitempty,min=3,max=20"`
 	Address  string `json:"address" form:"address" validate:"omitempty"`
